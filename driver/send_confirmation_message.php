@@ -28,7 +28,7 @@ if ($qry->num_rows > 0) {
         $client_contact,
         [
             'from' => $twilio_phone_number,
-            'body' => 'Your booking has been confirmed. Thank you for choosing our service!'
+            'body' => 'Your booking has been confirmed. Thank you for choosing our service'
         ]
     );
 
