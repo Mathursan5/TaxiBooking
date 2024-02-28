@@ -3,32 +3,28 @@
 	alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
 </script>
 <?php endif;?>
-<div class="card card-outline card-purple rounded-0 shadow">
+<div class="card card-outline card-black rounded-0 shadow" style="background-color:black; color:white;" >
 	<div class="card-header">
-		<h3 class="card-title">List of Categories</h3>
+		<h3 class="card-title">Taxi Type</h3>
 		<div class="card-tools">
-			<button type="button" id="create_new" class="btn btn-flat btn-success btn-sm"><span class="fas fa-plus"></span>  Add New Category</button>
+			<button type="button" id="create_new" class="btn btn-flat btn-warning btn-sm" style="border-radius: 50px;"><span class="fas fa-plus"></span>  Add New Taxi Type</button>
 		</div>
 	</div>
 	<div class="card-body">
-		<div class="container-fluid">
+		<div class="container">
 			<table class="table table-bordered table-stripped table-hover">
 				<colgroup>
-					<col width="5%">
 					<!-- <col width="20%"> -->
-					<col width="15%">
-					<col width="30%">
-					<col width="10%">
+					<col width="35%">
+					<col width="35%">
 					<col width="15%">
 				</colgroup>
 				<thead>
-				<tr class="bg-gradient-dark text-light">
-						<th>#</th>
-						<!-- <th>Date Created</th> -->
-						<th>Category</th>
-						<th>Description</th>
-						<th>Status</th>
-						<th>Action</th>
+				<tr class="bg-gradient-light text-dark">
+						
+						<th>Taxi Type</th>
+						<th>Description</th> 
+						<th>Options</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,24 +34,18 @@
 						while($row = $qry->fetch_assoc()):
 					?>
 						<tr>
-							<td class="text-center"><?php echo $i++; ?></td>
+							
 							<!-- <td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td> -->
 							<td><?php echo $row['name'] ?></td>
 							<td><p class="m-0 truncate-1"><?php echo $row['description'] ?></p></td>
-							<td class="text-center">
-                                <?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-success px-3 rounded-pill">Active</span>
-                                <?php else: ?>
-                                    <span class="badge badge-danger px-3 rounded-pill">Inactive</span>
-                                <?php endif; ?>
-                            </td>
+							
 							<td align="center">
 								<button type="button" class="btn btn-flat btn-info btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 									Action
 								<span class="sr-only">Toggle Dropdown</span>
 								</button>
 								<div class="dropdown-menu" role="menu">
-								<a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+								<!-- <a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a> -->
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item edit_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
 								<div class="dropdown-divider"></div>
@@ -72,16 +62,16 @@
 <script>
 	$(document).ready(function(){
 		$('#create_new').click(function(){
-			uni_modal("Add New Category","categories/manage_category.php");
+			uni_modal("Add New Taxi Type","categories/manage_category.php");
 		})
 		$('.edit_data').click(function(){
-			uni_modal("Edit Category","categories/manage_category.php?id="+$(this).attr('data-id'));
+			uni_modal("Edit Taxi Type","categories/manage_category.php?id="+$(this).attr('data-id'));
 		})
 		$('.view_data').click(function(){
-			uni_modal("Edit Category","categories/view_category.php?id="+$(this).attr('data-id'));
+			uni_modal("View Taxi Type","categories/view_category.php?id="+$(this).attr('data-id'));
 		})
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this category permanently?","delete_category",[$(this).attr('data-id')])
+			_conf("Are you sure to delete this Taxi Type?","delete_category",[$(this).attr('data-id')])
 		})
 		$('.table').dataTable();
 	})
