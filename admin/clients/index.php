@@ -3,60 +3,55 @@
 	alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
 </script>
 <?php endif;?>
-<div class="card card-outline card-purple">
+<div class="card card-outline card-black" style="background-color:black; color:white;">
 	<div class="card-header">
-		<h3 class="card-title">List of Clients</h3>
+		<h3 class="card-title">Passenger List</h3>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
         <div class="container-fluid">
 			<table class="table table-bordered table-stripped table-hover">
 				<colgroup>
-					<col width="5%">
-					<!-- <col width="15%"> -->
 					<col width="30%">
+					<col width="25%">
 					<col width="25%">
 					<col width="10%">
 					<col width="15%">
 				</colgroup>
 				<thead>
-				<tr class="bg-gradient-dark text-light">
-						<th>#</th>
-						<!-- <th>Date Created</th> -->
+				<tr class="bg-gradient-light text-dark">
 						<th>Name</th>
-						<th>Contact</th>
-						<th>Status</th>
-						<th>Action</th>
+						<th>Contact #</th>
+						<th>Email</th>
+						<th>Is Block</th>
+						<th>Options</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php 
 					$i = 1;
-						$qry = $conn->query("SELECT *,concat(lastname, ', ', firstname,' ',middlename) as fullname from `client_list` where delete_flag= 0 order by concat(lastname, ', ', firstname,' ',middlename) asc ");
+						$qry = $conn->query("SELECT *,concat(lastname, ' ', firstname,' ',middlename) as fullname from `client_list` where delete_flag= 0 order by concat(lastname, ', ', firstname,' ',middlename) asc ");
 						while($row = $qry->fetch_assoc()):
 							foreach($row as $k=> $v){
 								$row[$k] = trim(stripslashes($v));
 							}
-					?>
+							?>
 						<tr>
-							<td class="text-center"><?php echo $i++; ?></td>
 							<!-- <td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td> -->
 							<td><?php echo ucwords($row['fullname']) ?></td>
-							<td>
-								<p class="m-0 lh-1">
-								<?php echo $row['contact'] ?> <br>
-								<?php echo $row['email'] ?>
-								</p>
+							<td> 
+								<?php echo $row['contact'] ?>  
 							</td>
+							<td><?php echo $row['email'] ?> </td>
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-success rounded-pill px-3">Active</span>
+									<span class="badge badge-warning px-3 rounded-pill" alt="Active"><span class="fa fa-check text-light"></span>
                                 <?php else: ?>
-                                    <span class="badge badge-danger rounded-pill px-3">Inactive</span>
+									<span class="badge badge-danger px-3 rounded-pill"><span class="fa fa-ban text-light"></span>
                                 <?php endif; ?>
                             </td>
 							<td align="center">
-								 <button type="button" class="btn btn-flat btn-info btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+								 <button type="button" class="btn btn-flat btn border text-light btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 				                  		Action
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>

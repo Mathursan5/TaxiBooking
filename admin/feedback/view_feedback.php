@@ -22,7 +22,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     }
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:black; color:white;">
     <div class="row">
         <div class="col-md-6">
             <fieldset class="border-bottom">

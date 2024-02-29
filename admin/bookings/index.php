@@ -48,20 +48,20 @@
                                             echo "<span class='badge badge-warning bg-gradient-warning px-3 square-pill fa fa-taxi text-light'>Picked-up</span>";
                                             break;
                                         case 3:
-                                            echo "<span class='badge badge-success bg-gradient-success px-3 square-pill fa fa-check text-light'>Dropped off</span>";
+                                            echo "<span class='badge badge-success bg-gradient-success px-3 square-pill fa fa-check text-light'>Dropped</span>";
                                             break;
                                         case 4:
                                             echo "<span class='badge badge-danger bg-gradient-danger px-3 square-pill fa fa-ban text-light'>Cancelled</span>";
                                             break;
                                         case 5:
-                                            echo "<span class='badge badge-dark bg-gradient-dark px-3 square-pill fa fa-check-circle text-light'>Finished</span>";
+                                            echo "<span class='badge badge-dark bg-gradient-dark px-3 square-pill fa fa-check-circle text-light'>Completed</span>";
                                             break;
                                     }
                                 ?>
                             </td>
                             </td>
                             <td class="text-center">
-                                <a class="btn btn-flat btn-sm btn-info border view_data" href="javascript:void(0)" data-id="<?= $row['id'] ?>"><i class="fa fa-eye"></i> View</a>
+                                <a class="btn btn-flat btn-sm btn border text-light view_data" href="javascript:void(0)" data-id="<?= $row['id'] ?>"><i class="fa fa-eye"></i> View</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
@@ -78,6 +78,7 @@
 		$('.table').dataTable();
         $('.view_data').click(function(){
             uni_modal("Booking Details","bookings/view_booking.php?id="+$(this).attr('data-id'))
+            
         })
     })
 </script>

@@ -40,7 +40,7 @@
 							<td><p class="m-0 truncate-1"><?php echo $row['description'] ?></p></td>
 							
 							<td align="center">
-								<button type="button" class="btn btn-flat btn-info btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+								<button type="button" class="btn btn-flat btn border text-light btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 									Action
 								<span class="sr-only">Toggle Dropdown</span>
 								</button>

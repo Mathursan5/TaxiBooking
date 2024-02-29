@@ -8,11 +8,11 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
     }
 }
 ?>
-<div class="card card-outline card-purple">
+<div class="card card-outline card" style="background-color:black; color:white;">
 	<div class="card-header">
-		<h3 class="card-title"><?php echo isset($id) ? "Update ": "Create New " ?> Client Details</h3>
+		<h3 class="card-title"><?php echo isset($id) ? "Update ": "Create New " ?> Pasenger Details</h3>
 	</div>
-	<div class="card-body">
+	<div class="card-columns">
 		<form action="" id="client-form">
 			<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 			<div class="form-group">
@@ -54,10 +54,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 						<span class="input-group-text text-sm"><i class="fa fa-eye-slash text-muted pass_type" data-type="password"></i></span>
 					</div>
 				</div>
-				<small><em class="text-muted">Fill only to update Client's Password</em></small>
+				 
 			</div>
             <div class="form-group">
-				<label for="status" class="control-label">Status</label>
+				<label for="status" class="control-label">Is Block</label>
                 <select name="status" id="status" class="custom-select selevt">
                 <option value="1" <?php echo isset($status) && $status == 1 ? 'selected' : '' ?>>Active</option>
                 <option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Inactive</option>
@@ -66,8 +66,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		</form>
 	</div>
 	<div class="card-footer">
-		<button class="btn btn-flat btn-success" form="client-form">Save</button>
-		<a class="btn btn-flat btn-danger" href="?page=client">Cancel</a>
+		<button class="btn btn-flat btn-warning" form="client-form" style="border-radius: 50px;">Submit</button>
+		<a class="btn btn-flat btn-danger" href="?page=client" style="border-radius: 50px;">Cancel</a>
 	</div>
 </div>
 <script>
