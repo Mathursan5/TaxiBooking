@@ -1,5 +1,4 @@
  <!-- Header-->
- <div class="div"></div>
  <header class="bg-dark py-5" id="main-header">
     <div class="container h-100 d-flex align-items-center justify-content-center w-100">
         <div class="text-center text-white w-100">
