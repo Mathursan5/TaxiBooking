@@ -3,11 +3,11 @@
 	alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
 </script>
 <?php endif;?>
-<div class="card card-outline card-purple">
+<div class="card card-outline card-black" style="background-color:black; color:white;">
 	<div class="card-header">
-		<h3 class="card-title">List of Taxies</h3>
+		<h3 class="card-title">Drivers</h3>
 		<div class="card-tools">
-			<a href="?page=cabs/manage_cab" class="btn btn-flat btn-success btn-sm"><span class="fas fa-plus"></span>  Add New Taxi</a>
+			<a href="?page=cabs/manage_cab" class="btn btn-flat btn-warning btn-sm" style="border-radius: 50px;"><span class="fas fa-plus"></span>  Add New Driver</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -18,22 +18,22 @@
 					<col width="5%">
 					<!-- <col width="15%"> -->
 					<col width="15%">
-					<col width="10%">
 					<col width="15%">
+					<col width="10%">
 					<col width="20%">
 					<col width="10%">
 					<col width="15%">
 				</colgroup>
 				<thead>
-				<tr class="bg-gradient-dark text-light">
+				<tr class="bg-gradient-light text-dark">
 						<th>#</th>
 						<!-- <th>Date Created</th> -->
 						<th>Driver Name</th>
-						<th>Taxi No</th>
-						<th>Taxi Type</th>
-						<th>Model</th>
+						<th>Contact No</th>
+						<th>Taxi No</th> 
+						<th>Taxi Name</th>
 						<th>Status</th>
-						<th>Action</th>
+						<th>Options</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -49,8 +49,8 @@
 							<td class="text-center"><?php echo $i++; ?></td>
 							<!-- <td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td> -->
 							<td><?php echo ucwords($row['cab_driver']) ?></td>
-							<td><?php echo ucwords($row['cab_reg_no']) ?></td>
-							<td><?php echo ucwords($row['category']) ?></td>
+							<td><?php echo ucwords($row['driver_contact']) ?></td>
+							<td><?php echo ucwords($row['body_no']) ?></td>
 							<td><?php echo ucwords($row['cab_model'])?></td>
 							<!-- <td>
 								<div>
@@ -60,18 +60,18 @@
 							</td> -->
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-success px-3 rounded-pill">Active</span>
+                                    <span class="badge badge-warning px-3 rounded-pill" alt="Active"><span class="fa fa-check text-light"></span>
                                 <?php else: ?>
-                                    <span class="badge badge-danger px-3 rounded-pill">Inactive</span>
+                                    <span class="badge badge-danger px-3 rounded-pill"><span class="fa fa-ban text-light"></span>
                                 <?php endif; ?>
                             </td>
 							<td align="center">
-								 <button type="button" class="btn btn-flat btn-info btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+								 <button type="button" class="btn btn-flat btn border text-light btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 				                  		Action
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-                                    <a class="dropdown-item" href="?page=cabs/view_cab&id=<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+                                    <!-- <a class="dropdown-item" href="?page=cabs/view_cab&id=<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a> -->
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item" href="?page=cabs/manage_cab&id=<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
 				                    <div class="dropdown-divider"></div>
@@ -89,7 +89,7 @@
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this Taxi permanently?","delete_cab",[$(this).attr('data-id')])
+			_conf("Are you sure to delete this Driver?","delete_cab",[$(this).attr('data-id')])
 		})
         $('.table th, .table td').addClass("align-middle px-2 py-1")
 		$('.table').dataTable();

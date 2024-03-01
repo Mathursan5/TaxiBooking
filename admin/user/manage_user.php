@@ -12,29 +12,31 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 	alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
 </script>
 <?php endif;?>
-<div class="card card-outline card-purple">
-	<div class="card-body">
+<div class="card card-outline card-black" style="background-color:black; color:white;">
+<div class="card-header">
+		<h3 class="card-title"><?php echo isset($id) ? "Update ": "Create New " ?> User</h3>
+	</div>
+	<div class="card-columns">
 		<div class="container-fluid">
 			<div id="msg"></div>
 			<form action="" id="manage-user">	
 				<input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
-				<div class="form-group col-6">
+				<div class="form-group col-8">
 					<label for="name">First Name</label>
 					<input type="text" name="firstname" id="firstname" class="form-control" value="<?php echo isset($meta['firstname']) ? $meta['firstname']: '' ?>" required>
 				</div>
-				<div class="form-group col-6">
+				<div class="form-group col-8">
 					<label for="name">Last Name</label>
 					<input type="text" name="lastname" id="lastname" class="form-control" value="<?php echo isset($meta['lastname']) ? $meta['lastname']: '' ?>" required>
 				</div>
-				<div class="form-group col-6">
+				<div class="form-group col-8">
 					<label for="username">Username</label>
 					<input type="text" name="username" id="username" class="form-control" value="<?php echo isset($meta['username']) ? $meta['username']: '' ?>" required  autocomplete="off">
 				</div>
-				<div class="form-group col-6">
+				<div class="form-group col-8">
 					<label for="password">Password</label>
 					<input type="password" name="password" id="password" class="form-control" value="" autocomplete="off" <?php echo isset($meta['id']) ? "": 'required' ?>>
-                    <?php if(isset($_GET['id'])): ?>
-					<small><i>Leave this blank if you dont want to change the password.</i></small>
+                    <?php if(isset($_GET['id'])): ?> 
                     <?php endif; ?>
 				</div>
 				<div class="form-group col-6">
@@ -44,7 +46,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 						<option value="2" <?php echo isset($meta['type']) && $meta['type'] == 2 ? 'selected' : '' ?>>Staff</option>
 					</select>
 				</div>
-				<div class="form-group col-6">
+				<!-- <div class="form-group col-6">
 					<label for="" class="control-label">Avatar</label>
 					<div class="custom-file">
 		              <input type="file" class="custom-file-input rounded-circle" id="customFile" name="img" onchange="displayImg(this,$(this))">
@@ -53,15 +55,15 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				</div>
 				<div class="form-group col-6 d-flex justify-content-center">
 					<img src="<?php echo validate_image(isset($meta['avatar']) ? $meta['avatar'] :'') ?>" alt="" id="cimg" class="img-fluid img-thumbnail">
-				</div>
+				</div> -->
 			</form>
 		</div>
 	</div>
 	<div class="card-footer">
 			<div class="col-md-12">
 				<div class="row">
-					<button class="btn  btn-success mr-2" form="manage-user">Save</button>
-					<a class="btn  btn-danger" href="./?page=user/list">Cancel</a>
+					<button class="btn  btn-warning mr-2" form="manage-user" style="border-radius: 50px;">Submit</button>
+					<a class="btn  btn-danger" href="./?page=user/list" style="border-radius: 50px;">Cancel</a>
 				</div>
 			</div>
 		</div>

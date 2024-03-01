@@ -16,15 +16,16 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		object-position:center center;
 	}
 </style>
-<div class="card card-outline card-purple rounded-0">
+<div class="container-fluid"> 
+<div class="card card-outline card-black rounded-0" style="background-color:black; color:white;">
 	<div class="card-header">
 		<h3 class="card-title"><?php echo isset($id) ? "Update ": "Create New " ?> Taxi</h3>
 	</div>
-	<div class="card-body">
+	<div class="card-columns">
 		<form action="" id="cab-form">
 			<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
             <div class="form-group">
-				<label for="category_id" class="control-label">Category</label>
+				<label for="category_id" class="control-label">Taxi Type</label>
                 <select name="category_id" id="category_id" class="custom-select select2">
                     <option value="" <?= !isset($category_id) ? "selected" : "" ?> disabled></option>
                     <?php 
@@ -36,15 +37,15 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                 </select>
 			</div>
 			<div class="form-group">
-				<label for="cab_reg_no" class="control-label">Plate #/Vehicle Reg #</label>
+				<label for="cab_reg_no" class="control-label">Taxi Reg #</label>
                 <input name="cab_reg_no" id="cab_reg_no" type="text" class="form-control rounded-0" value="<?php echo isset($cab_reg_no) ? $cab_reg_no : ''; ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="cab_model" class="control-label">Vehicle Model</label>
+				<label for="cab_model" class="control-label">Taxi Name </label>
                 <input name="cab_model" id="cab_model" type="text" class="form-control rounded-0" value="<?php echo isset($cab_model) ? $cab_model : ''; ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="body_no" class="control-label">Taxi's Body #</label>
+				<label for="body_no" class="control-label">Taxi's Model</label>
                 <input name="body_no" id="body_no" type="text" class="form-control rounded-0" value="<?php echo isset($body_no) ? $body_no : ''; ?>" required>
 			</div>
             <div class="form-group">
@@ -52,23 +53,23 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                 <input name="cab_driver" id="cab_driver" type="text" class="form-control rounded-0" value="<?php echo isset($cab_driver) ? $cab_driver : ''; ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="driver_contact" class="control-label">Driver's Contact #</label>
+				<label for="driver_contact" class="control-label">Driver Contact #</label>
                 <input name="driver_contact" id="driver_contact" type="text" class="form-control rounded-0" value="<?php echo isset($driver_contact) ? $driver_contact : ''; ?>" required>
 			</div>
 			<div class="form-group">
-				<label for="driver_address" class="control-label">Driver's Address</label>
+				<label for="driver_address" class="control-label">Driver Address</label>
                 <textarea name="driver_address" id="driver_address" type="text" class="form-control rounded-0" required><?php echo isset($driver_address) ? $driver_address : ''; ?></textarea>
 			</div>
 			<div class="form-group">
-				<label for="password" class="control-label">Driver's Account Password</label>
+				<label for="password" class="control-label">Driver Password</label>
 				<div class="input-group">
                 	<input name="password" id="password" type="password" class="form-control rounded-0" <?php echo !isset($password) ? 'required' : ''; ?>>
 					<div class="input-group-append">
 						<button class="btn btn-outline-default pass_view" type="button"><i class="fa fa-eye-slash"></i></button>
 					</div>
 				</div>
-				<small class="text-muted"><i>Leave this field blank if you don't wish to update the driver's account password.</i></small>
-			</div>
+				
+			</div> <!--
 			<div class="form-group col-md-6">
 				<label for="" class="control-label">Driver's Image</label>
 				<div class="custom-file">
@@ -78,7 +79,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			</div>
 			<div class="form-group col-md-6 d-flex justify-content-center">
 				<img src="<?php echo validate_image(isset($image_path) ? $image_path : "") ?>" alt="" id="cimg" class="img-fluid img-thumbnail">
-			</div>
+			</div> -->
             <div class="form-group">
 				<label for="status" class="control-label">Status</label>
                 <select name="status" id="status" class="custom-select selevt">
@@ -89,8 +90,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		</form>
 	</div>
 	<div class="card-footer">
-		<button class="btn btn-flat btn-success" form="cab-form">Save</button>
-		<a class="btn btn-flat btn-danger" href="?page=cabs">Cancel</a>
+		<button class="btn btn-flat btn-warning" form="cab-form" style="border-radius: 50px;">Submit</button>
+		<a class="btn btn-flat btn-danger" href="?page=cabs" style="border-radius: 50px;">Cancel</a>
 	</div>
 </div>
 <script>
@@ -145,7 +146,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				},
 				success:function(resp){
 					if(typeof resp =='object' && resp.status == 'success'){
-						location.href = "./?page=cabs/view_cab&id="+resp.id;
+						location.href = "./?page=cabs/view_cab1&id="+resp.id;
 					}else if(resp.status == 'failed' && !!resp.msg){
                         var el = $('<div>')
                             el.addClass("alert alert-danger err-msg").text(resp.msg)

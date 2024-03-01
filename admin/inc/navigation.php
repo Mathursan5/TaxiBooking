@@ -35,7 +35,7 @@
                       <a href="<?php echo base_url ?>admin/?page=categories" class="nav-link nav-categories">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
-                          Manage Category
+                          Taxi Types
                         </p>
                       </a>
                     </li>
@@ -43,7 +43,7 @@
                       <a href="<?php echo base_url ?>admin/?page=cabs" class="nav-link nav-cabs">
                         <i class="nav-icon fas fa-taxi"></i>
                         <p>
-                          Taxi Management
+                          Drivers List
                         </p>
                       </a>
                     </li>
@@ -59,7 +59,7 @@
                       <a href="<?php echo base_url ?>admin/?page=clients" class="nav-link nav-clients">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                          Passengers
+                          Passengers List
                         </p>
                       </a>
                     </li>
@@ -82,14 +82,14 @@
                         </p>
                       </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=system_info" class="nav-link nav-system_info">
                         <i class="nav-icon fas fa-cogs"></i>
                         <p>
                           Settings
                         </p>
                       </a>
-                    </li>
+                    </li> -->
                     <?php endif; ?>
                   </ul>
                 </nav>
