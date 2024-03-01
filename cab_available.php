@@ -8,8 +8,13 @@
     </div>
 </header> -->
 <!-- Section-->
+<style>
+    body {
+        background-color:black; color:white;
+    }
+</style>
 <section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5 card rounded-0 card-outline card-purple shadow">
+    <div class="container px-4 px-lg-5 mt-5 card rounded-0  card-dark shadow" style="background-color:black; color:white;">
         <div class="row">
             <div class="col-md-12">
             <center>
@@ -33,7 +38,7 @@
     <button type="submit" name="toggle_button">Toggle Button</button>
 </form> -->
 			
-            <h1 class="display-4 fw-bolder">Available Taxi</h1>
+            <h1 class="display-6 fw-bolder">Available Taxi</h1>
             <hr>
             </center>
                 <div class="form-group">
@@ -57,7 +62,30 @@
                     <a class="col item text-decoration-none text-dark book_cab" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-bodyno="<?php echo $row['body_no'] ?>"<?php echo $isBusy ? 'style="pointer-events: none; opacity: 0.9;"' : ''; ?>>
                         <div class="callout <?php echo $isBusy ? 'callout-secondary' : 'callout-primary'; ?> border-success rounded-0">
                             <dl>
-                                <dt class="h3"><i class="fa fa-taxi"></i> <?php echo $row['body_no'] ?></dt>
+                                <dt class="h5"> <?php echo $row['body_no'] ?></dt>
+                                <!-- ********************************** --> 
+                                <dt>
+                                <?php 
+                                    switch($row['category']){
+                                        case "Tuk":
+                                            echo "<img src='assets/images/tuk.png' alt='Tuk Icon'>"; 
+                                            break;
+                                        case "Car":
+                                            echo "<img src='assets/images/car.png' alt='Car Icon'>"; 
+                                            break;
+                                        case "Mini":
+                                            echo "<img src='assets/images/mini.png' alt='Mini Car Icon'>"; 
+                                            break;
+                                        case "MiniVan":
+                                            echo "<img src='assets/images/minivan.png' alt='Mini Van Icon'>"; 
+                                            break;
+                                        case "Van":
+                                            echo "<img src='assets/images/van.png' alt='Van Icon'>"; 
+                                            break; 
+                                    }
+                                ?>  
+                                 </dt> 
+                                <!--*********************************** -->
                                 <dd class="truncate-3 text-muted lh-1">
                                     <small><?php echo $row['category'] ?></small><br>
                                     <small><?php echo $row['cab_model'] ?></small>
@@ -68,6 +96,7 @@
                                             }
                                         ?>
                                     </small>
+                                    
                                 </dd>
                             </dl>
                         </div>
