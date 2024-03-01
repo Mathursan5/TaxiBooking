@@ -9,10 +9,14 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
     }
 }
 ?>
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:black; color:white;">
     <form action="" id="booking-form">
         <input type="hidden" name="id" value="<?= isset($id) ? $id : '' ?>">
         <input type="hidden" name="cab_id" value="<?= isset($_GET['cid']) ? $_GET['cid'] : (isset($cab_id) ? $cab_id : "") ?>">
+        <div class="form-group">
+    <label for="pickup_date" class="control-label">Pickup Date</label>
+    <input type="date" name="pickup_date" id="pickup_date" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d'); ?>" readonly required>
+</div>
         <div class="form-group">
             <label for="pickup_zone" class="control-label">Pickup Location</label>
             <textarea name="pickup_zone" id="pickup_zone" rows="2" class="form-control form-control-sm rounded-0" required></textarea>

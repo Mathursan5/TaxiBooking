@@ -54,8 +54,8 @@ if (isset($_SESSION['success_message'])) {
       <div class="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-warning" style="border-radius: 50px;" id='submit' onclick="$('#uni_modal form').submit()">Submit</button>
+        <button type="button" class="btn btn-danger" style="border-radius: 50px;" data-dismiss="modal">Cancel</button>
       </div>
       </div>
     </div>
@@ -92,8 +92,8 @@ if (isset($_SESSION['success_message'])) {
         <div id="delete_content"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" id='confirm' onclick="">Continue</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" style="border-radius: 50px;" id='confirm' onclick="">Continue</button>
+        <button type="button" class="btn btn-danger" style="border-radius: 50px;" data-dismiss="modal">Close</button>
       </div>
       </div>
     </div>

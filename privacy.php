@@ -1,8 +1,8 @@
-<section class="py-5">
-    <div class="container">
-        <div class="card rounded-0 card-outline card-purple shadow px-4 px-lg-5 mt-5">
+<section class="py-5" style="background-color:black; color:white;">
+    <div class="container" >
+        <div class="card rounded-0 card-outline card-black shadow px-4 px-lg-5 mt-5" style="background-color:black; color:white;">
             <div class="row">
-            <div class="card-body">
+            <div class="card-body" >
                 <p>
                 <strong>User Authentication Mechanisms:</strong> Implement secure password policies and multi-factor authentication to safeguard user accounts and ensure that only authorized individuals have access to sensitive data.
                 </p>

@@ -13,11 +13,11 @@
         border-radius:100%;
     }
 </style>
-<div class="card card-outline card-purple">
+<div class="card card-outline card-black" style="background-color:black; color:white;">
 	<div class="card-header">
 		<h3 class="card-title">List of System Users</h3>
 		<div class="card-tools">
-			<a href="?page=user/manage_user" class="btn btn-flat btn-success btn-sm"><span class="fas fa-plus"></span>  Add New User</a>
+			<a href="?page=user/manage_user" class="btn btn-flat btn-warning btn-sm" style="border-radius: 50px;"><span class="fas fa-plus"></span>  Add New User</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -25,17 +25,15 @@
         <div class="container-fluid">
 			<table class="table table-bordered table-stripped">
 				<colgroup>
-					<col width="10%">
-					<col width="15%">
+					<col width="10%"> 
 					<col width="25%">
 					<col width="25%">
 					<col width="15%">
 					<col width="10%">
 				</colgroup>
 				<thead>
-				<tr class="bg-gradient-dark text-light">
-						<th>#</th>
-						<th>Avatar</th>
+				<tr class="bg-gradient-light text-dark">
+						<th>#</th> 
 						<th>Name</th>
 						<th>Username</th>
 						<th>Type</th>
@@ -50,12 +48,11 @@
 					?>
 						<tr>
 							<td class="text-center"><?php echo $i++; ?></td>
-							<td class="text-center"><img src="<?php echo validate_image($row['avatar']) ?>" class="img-avatar img-thumbnail p-0 border-2" alt="user_avatar"></td>
 							<td><?php echo ucwords($row['name']) ?></td>
 							<td ><p class="m-0 truncate-1"><?php echo $row['username'] ?></p></td>
 							<td><?php echo ($row['type'] == 1) ? 'Administrator' : 'Staff' ?></td>
 							<td align="center">
-								 <button type="button" class="btn btn-flat btn-info btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+								 <button type="button" class="btn btn-flat btn border text-light btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 				                  		Action
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
