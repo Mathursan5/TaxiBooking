@@ -129,9 +129,9 @@
         $(document).trigger('scroll')
     })
 </script>
-
+        
 <?php
-// Function to get booking status for a given cab
+// Function to get booking status for a given cab // 
 function getBookingStatus($cabId) {
     global $conn; // Assuming $conn is your database connection object
 
@@ -146,7 +146,7 @@ function getBookingStatus($cabId) {
             return $row['status'];
         }
     }
-
+    
     // Default to 0 (Not busy) if no booking or an error occurred
     return -1;
 }

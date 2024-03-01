@@ -12,13 +12,13 @@
   }
 </style>
 <!-- Navbar -->
-      <nav class="main-header navbar navbar-expand navbar-light text-sm shadow">
+      <nav class="main-header navbar navbar-expand navbar-light text-sm shadow" style="background-color:black; color:white;">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
-          <li class="nav-item d-none d-sm-inline-block">
+          <li class="nav-item d-none d-sm-inline-block" style="color: white">
             <a href="<?php echo base_url ?>" class="nav-link"><?php echo (!isMobileDevice()) ? $_settings->info('name'):$_settings->info('short_name'); ?> - Admin</a>
           </li>
         </ul>
@@ -49,7 +49,7 @@
           <li class="nav-item">
             <div class="btn-group nav-link">
                   <button type="button" class="btn btn-rounded badge badge-light dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                    <span><img src="<?php echo validate_image($_settings->userdata('avatar')) ?>" class="img-circle elevation-2 user-img" alt="User Image"></span>
+                  
                     <span class="ml-3"><?php echo ucwords($_settings->userdata('firstname').' '.$_settings->userdata('lastname')) ?></span>
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>

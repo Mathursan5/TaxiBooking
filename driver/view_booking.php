@@ -22,7 +22,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
         display:none
     }
 </style>
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:black; color:white;">
 
     <div class="row">
         <div class="col-md-6">
@@ -62,22 +62,22 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                         <?php 
                             switch($status){
                                 case 0:
-                                    echo "<span class='badge badge-secondary bg-gradient-secondary px-3 rounded-pill'>Pending</span>";
+                                    echo "<span class='badge badge-secondary bg-gradient-secondary px-3 square-pill'>Pending</span>";
                                     break;
                                 case 1:
-                                    echo "<span class='badge badge-primary bg-gradient-primary px-3 rounded-pill'>Driver Confirmed</span>";
+                                    echo "<span class='badge badge-primary bg-gradient-primary px-3 square-pill'>Confirmed</span>";
                                     break;
                                 case 2:
-                                    echo "<span class='badge badge-warning bg-gradient-warning px-3 rounded-pill'>Picked-up</span>";
+                                    echo "<span class='badge badge-warning bg-gradient-warning px-3 square-pill'>Picked-up</span>";
                                     break;
                                 case 3:
-                                    echo "<span class='badge badge-success bg-gradient-success px-3 rounded-pill'>Dropped off</span>";
+                                    echo "<span class='badge badge-success bg-gradient-success px-3 square-pill'>Dropped</span>";
                                     break;
                                 case 4:
-                                    echo "<span class='badge badge-danger bg-gradient-danger px-3 rounded-pill'>Cancelled</span>";
+                                    echo "<span class='badge badge-danger bg-gradient-danger px-3 square-pill'>Cancelled</span>";
                                     break;
                                 case 5:
-                                    echo "<span class='badge badge-dark bg-gradient-dark px-3 rounded-pill'>Finished</span>";
+                                    echo "<span class='badge badge-dark bg-gradient-dark px-3 square-pill'>Completed</span>";
                                     break;
                             }
                         ?>
