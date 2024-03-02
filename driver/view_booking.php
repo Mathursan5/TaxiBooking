@@ -22,7 +22,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
         display:none
     }
 </style>
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:black; color:white;">
 
     <div class="row">
         <div class="col-md-6">
@@ -62,22 +62,22 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                         <?php 
                             switch($status){
                                 case 0:
-                                    echo "<span class='badge badge-secondary bg-gradient-secondary px-3 rounded-pill'>Pending</span>";
+                                    echo "<span class='badge badge-secondary bg-gradient-secondary px-3 square-pill'>Pending</span>";
                                     break;
                                 case 1:
-                                    echo "<span class='badge badge-primary bg-gradient-primary px-3 rounded-pill'>Driver Confirmed</span>";
+                                    echo "<span class='badge badge-primary bg-gradient-primary px-3 square-pill'>Confirmed</span>";
                                     break;
                                 case 2:
-                                    echo "<span class='badge badge-warning bg-gradient-warning px-3 rounded-pill'>Picked-up</span>";
+                                    echo "<span class='badge badge-warning bg-gradient-warning px-3 square-pill'>Picked-up</span>";
                                     break;
                                 case 3:
-                                    echo "<span class='badge badge-success bg-gradient-success px-3 rounded-pill'>Dropped off</span>";
+                                    echo "<span class='badge badge-success bg-gradient-success px-3 square-pill'>Dropped</span>";
                                     break;
                                 case 4:
-                                    echo "<span class='badge badge-danger bg-gradient-danger px-3 rounded-pill'>Cancelled</span>";
+                                    echo "<span class='badge badge-danger bg-gradient-danger px-3 square-pill'>Cancelled</span>";
                                     break;
                                 case 5:
-                                    echo "<span class='badge badge-dark bg-gradient-dark px-3 rounded-pill'>Finished</span>";
+                                    echo "<span class='badge badge-dark bg-gradient-dark px-3 square-pill'>Completed</span>";
                                     break;
                             }
                         ?>
@@ -90,13 +90,13 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
     <!-- <div class="clear-fix my-3"></div> -->
     <div class="text-right">
         <?php if(isset($status) && $status == 0): ?>
-        <button class="btn btn-primary btn-flat bg-gradient-primary" type="button" id="confirm_booking">Confirm Booking</button>
+        <button class="btn btn-primary btn-flat bg-gradient-primary" style="border-radius: 50px;" type="button" id="confirm_booking">Confirm Booking</button>
         <?php elseif(isset($status) && $status == 1): ?>
-        <button class="btn btn-warning btn-flat bg-gradient-warning" type="button" id="pickup_booking">Picked Up</button>
+        <button class="btn btn-warning btn-flat bg-gradient-warning" style="border-radius: 50px;" type="button" id="pickup_booking">Picked Up</button>
         <?php elseif(isset($status) && $status == 2): ?>
-        <button class="btn btn-success btn-flat bg-gradient-success" type="button" id="dropoff_booking">Dropped Off</button>
+        <button class="btn btn-success btn-flat bg-gradient-success" style="border-radius: 50px;" type="button" id="dropoff_booking">Dropped Off</button>
         <?php endif; ?>
-        <button class="btn btn-dark btn-flat bg-gradient-dark" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        <button class="btn btn-dark btn-flat bg-gradient-dark" style="border-radius: 50px;" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
     </div>
 </div>
 <script>

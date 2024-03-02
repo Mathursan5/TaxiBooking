@@ -38,7 +38,7 @@ Class Master extends DBConnection {
 			return $this->capture_err();
 		if($check > 0){
 			$resp['status'] = 'failed';
-			$resp['msg'] = " Category already exist.";
+			$resp['msg'] = " Taxi Type already exist.";
 			return json_encode($resp);
 			exit;
 		}
@@ -52,9 +52,9 @@ Class Master extends DBConnection {
 		if($save){
 			$resp['status'] = 'success';
 			if(empty($id))
-				$this->settings->set_flashdata('success'," New Category successfully saved.");
+				$this->settings->set_flashdata('success'," New Taxi Type successfully saved.");
 			else
-				$this->settings->set_flashdata('success'," Category successfully updated.");
+				$this->settings->set_flashdata('success'," Taxi Type successfully updated.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['err'] = $this->conn->error."[{$sql}]";
@@ -66,7 +66,7 @@ Class Master extends DBConnection {
 		$del = $this->conn->query("UPDATE `category_list` set delete_flag = 1 where id = '{$id}'");
 		if($del){
 			$resp['status'] = 'success';
-			$this->settings->set_flashdata('success'," Category successfully deleted.");
+			$this->settings->set_flashdata('success'," Taxi Type successfully deleted.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['error'] = $this->conn->error;
@@ -110,7 +110,7 @@ Class Master extends DBConnection {
 				return $this->capture_err();
 			if($check > 0){
 				$resp['status'] = 'failed';
-				$resp['msg'] = " Cab already exist.";
+				$resp['msg'] = " Taxi already exist.";
 				return json_encode($resp);
 				exit;
 			}
@@ -134,7 +134,7 @@ Class Master extends DBConnection {
 				return $this->capture_err();
 			if($check > 0){
 				$resp['status'] = 'failed';
-				$resp['msg'] = " Cab Body # already exist.";
+				$resp['msg'] = " Taxi Body # already exist.";
 				return json_encode($resp);
 				exit;
 			}
@@ -160,9 +160,9 @@ Class Master extends DBConnection {
 			$cid = empty($id) ? $this->conn->insert_id : $id;
 			$resp['id'] = $cid ;
 			if(empty($id))
-				$resp['msg'] = " New Cab successfully saved.";
+				$resp['msg'] = " New Driver successfully saved.";
 			else
-				$resp['msg'] = " Cab successfully updated.";
+				$resp['msg'] = " Driver successfully updated.";
 				if($this->settings->userdata('id')  == $cid && $this->settings->userdata('login_type') == 3){
 					foreach($_POST as $k => $v){
 						if(!in_array($k,['password']))
@@ -221,7 +221,7 @@ Class Master extends DBConnection {
 		$del = $this->conn->query("UPDATE `cab_list` set `delete_flag` = 1  where id = '{$id}'");
 		if($del){
 			$resp['status'] = 'success';
-			$this->settings->set_flashdata('success'," Cab successfully deleted.");
+			$this->settings->set_flashdata('success'," Driver successfully deleted.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['error'] = $this->conn->error;
@@ -262,9 +262,9 @@ Class Master extends DBConnection {
 		if($save){
 			$resp['status'] = 'success';
 			if(empty($id))
-				$this->settings->set_flashdata('success'," Cab has been booked successfully.");
+				$this->settings->set_flashdata('success'," Driver has been booked successfully.");
 			else
-				$this->settings->set_flashdata('success'," Booking successfully updated.");
+				$this->settings->set_flashdata('success'," Driver successfully updated.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['err'] = $this->conn->error."[{$sql}]";

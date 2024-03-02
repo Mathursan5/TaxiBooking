@@ -6,7 +6,7 @@
     object-position: center center;
 }
 </style>
-<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-pink fixed-top" id="topNavBar">
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="topNavBar" style="background-color:black;">
             <div class="container px-4 px-lg-5 ">
                 <button class="navbar-toggler btn btn-sm" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <a class="navbar-brand" href="./">
@@ -37,7 +37,7 @@
                     <div class="d-flex align-items-end">
                       <div class="navbar-nav nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <span><img src="<?= validate_image($_settings->userdata('image_path')) ?>" alt="user_avatar" id="user_avatar" class="img-fluid img-thumbnail rounded-circle border-dark"></span> Hello, <?= $_settings->userdata('firstname') ?>
+                          Hi, <?= $_settings->userdata('firstname') ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <a class="dropdown-item" href="./?p=booking_list">My Bookings</a>

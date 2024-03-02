@@ -52,10 +52,17 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<label for="cab_driver" class="control-label">Driver Name</label>
                 <input name="cab_driver" id="cab_driver" type="text" class="form-control rounded-0" value="<?php echo isset($cab_driver) ? $cab_driver : ''; ?>" required>
 			</div>
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label for="driver_contact" class="control-label">Driver Contact #</label>
                 <input name="driver_contact" id="driver_contact" type="text" class="form-control rounded-0" value="<?php echo isset($driver_contact) ? $driver_contact : ''; ?>" required>
+			</div> -->
+			<div class="form-group">
+    			<label for="driver_contact" class="control-label">Driver Contact #</label>
+    			<input name="driver_contact" id="driver_contact" type="text" class="form-control rounded-0" 
+           		value="<?php echo isset($driver_contact) ? $driver_contact : ''; ?>" 
+           		pattern="\d{10}" title="Please enter a 10-digit contact number" required>
 			</div>
+
 			<div class="form-group">
 				<label for="driver_address" class="control-label">Driver Address</label>
                 <textarea name="driver_address" id="driver_address" type="text" class="form-control rounded-0" required><?php echo isset($driver_address) ? $driver_address : ''; ?></textarea>

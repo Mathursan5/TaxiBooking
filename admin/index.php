@@ -44,7 +44,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning btn-sm rounded-0" id='confirm' onclick="" style="border-radius: 50px;">Continue</button>
-        <button type="button" class="btn btn-danger btn-sm rounded-0" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger btn-sm rounded-0" data-dismiss="modal" style="border-radius: 50px;">Close</button>
       </div>
       </div>
     </div>
@@ -59,7 +59,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning btn-sm rounded-0" id='submit' onclick="$('#uni_modal form').submit()"  style="border-radius:50px;">Submit</button>
-        <button type="button" class="btn btn-danger btn-sm rounded-0" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger btn-sm rounded-0" data-dismiss="modal" style="border-radius:50px;">Cancel</button>
       </div>
       </div>
     </div>

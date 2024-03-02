@@ -607,6 +607,7 @@
     &.nav-compact.nav-sidebar .nav-treeview {
       .nav-icon {
         margin-left: .4rem;
+        background-color: black;
       }
     }
 
@@ -672,6 +673,7 @@
     > .nav-link {
       border-radius: 0;
       margin-bottom: 0;
+      
 
       > .nav-icon {
         margin-left: .55rem;

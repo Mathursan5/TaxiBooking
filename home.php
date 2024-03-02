@@ -1,12 +1,11 @@
  <!-- Header-->
- <div class="div"></div>
  <header class="bg-dark py-5" id="main-header">
     <div class="container h-100 d-flex align-items-center justify-content-center w-100">
         <div class="text-center text-white w-100">
             <h1 class="display-4 fw-bolder mx-5"><?php echo $_settings->info('name') ?></h1>
             <div class="col-auto mt-4">
 			<!-- DASH BORAD -->
-			<div class="row" style="background-color: lightpink; padding-top:15px">
+			<div class="row" style="background-color: black; padding-top:15px">
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="shadow info-box mb-3">

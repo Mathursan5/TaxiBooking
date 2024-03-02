@@ -22,39 +22,44 @@ if($_settings->userdata('id') > 0 && $_settings->userdata('login_type') == 3){
         object-fit:scale-down;
         object-position:center center;
     }
+    body {
+        background-color:black; color:white;
+    }
 </style>
 <div class="content py-5 mt-5">
     <div class="container">
-        <div class="card card-outline card-purple shadow rounded-0">
+        <div class="card card-outline card-dark shadow rounded-0" style="background-color:black; color:white;">
             <div class="card-header">
                 <h4 class="card-title"><b>Manage Account Details</b></h4>
             </div>
-            <div class="card-body">
+            <div class="card-columns">
                 <div class="container-fluid">
                     <form id="register-frm" action="" method="post">
                         <input type="hidden" name="id" value="<?= isset($id) ? $id : "" ?>">
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-8">
                                 <input type="text" name="cab_driver" id="cab_driver" placeholder="Enter Fullname Name" autofocus class="form-control form-control-sm form-control-border" value="<?= isset($cab_driver) ? $cab_driver : "" ?>" required>
                                 <small class="ml-3">Fullname</small>
                             </div>
                         </div>
-                        <div class="row">
-                           
-                            <div class="form-group col-md-6">
-                                <input type="text" name="driver_contact" id="driver_contact" placeholder="Enter Contact #" class="form-control form-control-sm form-control-border" required value="<?= isset($driver_contact) ? $driver_contact : "" ?>">
-                                <small class="ml-3">Contact #</small>
-                            </div>
+                        <div class="row"> 
+                        <div class="form-group col-md-8">
+                            <input type="text" name="driver_contact" id="driver_contact" placeholder="Enter Contact #" class="form-control form-control-sm form-control-border" 
+                                pattern="\d{10}" title="Please enter a 10-digit contact number" 
+                                required value="<?= isset($driver_contact) ? $driver_contact : "" ?>">
+                            <small class="ml-3">Contact #</small>
+                        </div>
+
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-12">
+                        <div class="form-group col-md-8">
                             <small class="ml-3">Address</small>
                             <textarea name="driver_address" id="driver_address" rows="3" class="form-control form-control-sm rounded-0" placeholder="Block 6 Lot 23, Here Subd., There City, Anywhere, 2306"><?= isset($driver_address) ? $driver_address : "" ?></textarea>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-8">
                                 <div class="input-group">
                                 <input type="password" name="password" id="password" placeholder="" class="form-control form-control-sm form-control-border">
                                 <div class="input-group-append border-bottom border-top-0 border-left-0 border-right-0">
@@ -63,7 +68,7 @@ if($_settings->userdata('id') > 0 && $_settings->userdata('login_type') == 3){
                                 </div>
                                 <small class="ml-3">New Password</small>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-8">
                                 <div class="input-group">
                                 <input type="password" id="cpassword" placeholder="" class="form-control form-control-sm form-control-border">
                                 <div class="input-group-append border-bottom border-top-0 border-left-0 border-right-0">
@@ -72,10 +77,10 @@ if($_settings->userdata('id') > 0 && $_settings->userdata('login_type') == 3){
                                 </div>
                                 <small class="ml-3">Confirm New Password</small>
                             </div>
-                            <div class="col-12 mb-3"><small class="text-muted"><em>Fill the password fields above only if you want to update your password.</em></small></div>
+                            
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-8">
                                 <div class="input-group">
                                 <input type="password" name="oldpassword" id="oldpassword" placeholder="" class="form-control form-control-sm form-control-border" required>
                                 <div class="input-group-append border-bottom border-top-0 border-left-0 border-right-0">
@@ -85,26 +90,13 @@ if($_settings->userdata('id') > 0 && $_settings->userdata('login_type') == 3){
                                 <small class="ml-3">Current Password</small>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                            <label for="" class="control-label">Avatar</label>
-                            <div class="custom-file">
-                                    <input type="file" class="custom-file-input rounded-0 form-control form-control-sm form-control-border" id="customFile" name="img" onchange="displayImg(this,$(this))">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
-                            </div>
-                        <div class="row">
-                        </div>
-                            <div class="form-group col-md-6 d-flex justify-content-center">
-                            <img src="<?php echo validate_image(isset($image_path) ? $image_path : "") ?>" alt="" id="cimg" class="img-fluid img-thumbnail">
-                            </div>
-                        </div>
+                        
                         <div class="row align-items-center">
                             <div class="col-8">
                             </div>
                             <!-- /.col -->
-                            <div class="col-4">
-                            <button type="submit" class="btn btn-success btn-sm btn-flat btn-block">Update Details</button>
+                            <div class="col-8">
+                            <button type="submit" class="btn btn-warning btn-sm btn-flat btn-block" style="border-radius: 50px;">Update Details</button>
                             </div>
                             <!-- /.col -->
                         </div>
