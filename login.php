@@ -1,103 +1,57 @@
 <?php require_once('./config.php') ?>
 <!DOCTYPE html>
-<html lang="en" class="" style="height: auto;">
- <?php require_once('inc/header.php') ?>
-<body class="hold-transition login-page">
-  <script>
-    start_loader()
-  </script>
-  <style>
-      body{
-        
-          /* width:calc(100%);
-          height:calc(100%);
-          background-image:url('<?= validate_image($_settings->info('cover')) ?>');
-          background-repeat: no-repeat;
-          background-size:cover; */
-      }
-      #logo-img{
-          /* width:15em;
-          height:15em; */
-          object-fit:scale-down;
-          object-position:center center;
-      }
-  </style>
-<div class="login-box">
-<?php $page = isset($_GET['page']) ? $_GET['page'] : 'home';  ?>
-     <?php if($_settings->chk_flashdata('success')): ?>
-      <script>
-        alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
-      </script>
-    <?php endif;?>
-  <!-- /.login-logo -->
-  <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="System Logo" id="logo-img"></center>
-  <div class="clear-fix my-2"></div>
-  <div class="card card-outline card-purple">
-    <div class="card-header text-center">
-      <a href="./" class="h4 text-decoration-none"><b>Passenger Login Panel</b></a>
+<html lang="en">
+<?php require_once('inc/header.php') ?>
+<body class="bg-gradient-primary">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                              <img src="assets/images/login.jpg">
+                            </div>
+                            <div class="col-lg-6" style="background-color:black; color:white;">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Passenger Login Panel</h1>
+                                    </div>
+                                    <form id="clogin-frm" action="" method="post" class="user">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user" name="email" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
+                                            Log In
+                                        </button>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="<?php echo base_url ?>">Back</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="<?php echo base_url.'register.php' ?>">Create an Account</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-      
 
-      <form id="clogin-frm" action="" method="post">
-        <div class="input-group mb-3">
-        <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-          <input type="email" class="form-control" name="email" placeholder="Email">
-          
-        </div>
-        <div class="input-group mb-3">
-        <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-          <input type="password" class="form-control" name="password" placeholder="Password">
-          
-        </div>
-        <div class="row align-items-center">
-          <div class="col-8">
-            <a href="<?php echo base_url ?>" style="text-decoration:none;">Back</a>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-success btn-sm btn-flat btn-block">Log In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
-             <a href="<?php echo base_url.'register.php' ?>" style="text-decoration:none;">Create an Account</a>
-            </div>
-        </div>
-      </form>
-      <!-- /.social-auth-links -->
-
-      <!-- <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p> -->
-      
-    </div>
-    <!-- /.card-body -->
-  </div>
-  <!-- /.card -->
-</div>
-<!-- /.login-box -->
-
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-
-<script>
-  $(document).ready(function(){
-    end_loader();
-  })
-</script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="plugins/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="dist/js/adminlte.min.js"></script>
 </body>
 </html>
