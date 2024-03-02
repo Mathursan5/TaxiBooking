@@ -123,8 +123,8 @@ while($row = $meta->fetch_assoc()){
     </div>
         <div class="w-100 d-flex justify-content-end mx-2">
             <div class="col-auto">
-                <button class="btn btn-primary btn-sm rounded-0">Save Request</button>
-                <button class="btn btn-light btn-sm rounded-0" type="button" data-dismiss="modal">Close</button>
+                <button class="btn btn-warning btn-sm rounded-0" style="border-radius: 50px;">Save Request</button>
+                <button class="btn btn-light btn-sm rounded-0" style="border-radius: 50px;"type="button" data-dismiss="modal">Close</button>
             </div>
         </div>
     </form>

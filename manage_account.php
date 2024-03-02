@@ -59,9 +59,12 @@ if($_settings->userdata('id') > 0 && $_settings->userdata('login_type') == 2){
                                 <small class="ml-3">Gender</small>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" name="contact" id="contact" placeholder="Enter Contact #" class="form-control form-control-sm form-control-border" required value="<?= isset($contact) ? $contact : "" ?>">
-                                <small class="ml-3">Contact #</small>
-                            </div>
+    <input type="text" name="contact" id="contact" placeholder="Enter Contact #" class="form-control form-control-sm form-control-border" 
+           pattern="\d{10}" title="Please enter a 10-digit contact number" 
+           required value="<?= isset($contact) ? $contact : "" ?>">
+    <small class="ml-3">Contact #</small>
+</div>
+ 
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">

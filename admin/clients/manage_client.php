@@ -34,10 +34,20 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                 <option <?php echo isset($gender) && $gender == 'Female' ? 'selected' : '' ?>>Female</option>
                 </select>
 			</div>
-            <div class="form-group">
+            <!-- <div class="form-group">
 				<label for="contact" class="control-label">Contact</label>
                 <input name="contact" id="contact" type="text" class="form-control rounded-0" value="<?php echo isset($contact) ? $contact : ''; ?>" required>
+			</div> -->
+				<div class="form-group">
+				<label for="contact" class="control-label">Contact</label>
+				<input name="contact" id="contact" type="text" class="form-control rounded-0" 
+					value="<?php echo isset($contact) ? $contact : ''; ?>" 
+					pattern="\d{10}" title="Please enter a 10-digit contact number" 
+					maxlength="10" required>
 			</div>
+
+
+
 			<div class="form-group">
 				<label for="address" class="control-label">Address</label>
                 <textarea name="address" id="address"class="form-control rounded-0" required><?php echo isset($address) ? $address : ''; ?></textarea>

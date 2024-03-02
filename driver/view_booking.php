@@ -90,13 +90,13 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
     <!-- <div class="clear-fix my-3"></div> -->
     <div class="text-right">
         <?php if(isset($status) && $status == 0): ?>
-        <button class="btn btn-primary btn-flat bg-gradient-primary" type="button" id="confirm_booking">Confirm Booking</button>
+        <button class="btn btn-primary btn-flat bg-gradient-primary" style="border-radius: 50px;" type="button" id="confirm_booking">Confirm Booking</button>
         <?php elseif(isset($status) && $status == 1): ?>
-        <button class="btn btn-warning btn-flat bg-gradient-warning" type="button" id="pickup_booking">Picked Up</button>
+        <button class="btn btn-warning btn-flat bg-gradient-warning" style="border-radius: 50px;" type="button" id="pickup_booking">Picked Up</button>
         <?php elseif(isset($status) && $status == 2): ?>
-        <button class="btn btn-success btn-flat bg-gradient-success" type="button" id="dropoff_booking">Dropped Off</button>
+        <button class="btn btn-success btn-flat bg-gradient-success" style="border-radius: 50px;" type="button" id="dropoff_booking">Dropped Off</button>
         <?php endif; ?>
-        <button class="btn btn-dark btn-flat bg-gradient-dark" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        <button class="btn btn-dark btn-flat bg-gradient-dark" style="border-radius: 50px;" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
     </div>
 </div>
 <script>

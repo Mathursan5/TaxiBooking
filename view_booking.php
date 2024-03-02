@@ -58,25 +58,29 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                     <dt class="">Status</dt>
                     <dd class="pl-4">
                         <?php 
-                            switch($status){
-                                case 0:
-                                    echo "<span class='badge badge-secondary bg-gradient-secondary px-3 square-pill fa fa-pause text-light'> Pending</span>";
-                                    break;
-                                case 1:
-                                    echo "<span class='badge badge-primary bg-gradient-primary px-3 square-pill fa fa-commenting text-light'>Driver Confirmed</span>";
-                                    break;
-                                case 2:
-                                    echo "<span class='badge badge-warning bg-gradient-warning px-3 square-pill fa fa-taxi text-light'>Picked-up</span>";
-                                    break;
-                                case 3:
-                                    echo "<span class='badge badge-success bg-gradient-success px-3 square-pill fa fa-check text-light'>Dropped</span>";
-                                    break;
-                                case 4:
-                                    echo "<span class='badge badge-danger bg-gradient-danger px-3 square-pill fa fa-ban text-light'>Cancelled</span>";
-                                    break;
-                                case 5:
-                                    echo "<span class='badge badge-dark bg-gradient-dark px-3 square-pill fa fa-check-circle text-light'>Completed</span>";
-                                    break;
+                            if (isset($status)) {
+                                switch($status){
+                                    case 0:
+                                        echo "<span class='badge badge-secondary bg-gradient-secondary px-3 square-pill fa fa-pause text-light'> Pending</span>";
+                                        break;
+                                    case 1:
+                                        echo "<span class='badge badge-primary bg-gradient-primary px-3 square-pill fa fa-commenting text-light'>Driver Confirmed</span>";
+                                        break;
+                                    case 2:
+                                        echo "<span class='badge badge-warning bg-gradient-warning px-3 square-pill fa fa-taxi text-light'>Picked-up</span>";
+                                        break;
+                                    case 3:
+                                        echo "<span class='badge badge-success bg-gradient-success px-3 square-pill fa fa-check text-light'>Dropped</span>";
+                                        break;
+                                    case 4:
+                                        echo "<span class='badge badge-danger bg-gradient-danger px-3 square-pill fa fa-ban text-light'>Cancelled</span>";
+                                        break;
+                                    case 5:
+                                        echo "<span class='badge badge-dark bg-gradient-dark px-3 square-pill fa fa-check-circle text-light'>Completed</span>";
+                                        break;
+                                }
+                            } else {
+                                echo "<span class='badge badge-secondary bg-gradient-secondary px-3 rounded-pill'>Status Not Set</span>";
                             }
                         ?>
                     </dd>
@@ -90,9 +94,9 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
     <div class="text-right">
         
         <?php if(isset($status) && $status == 0): ?>
-        <button class="btn btn-danger btn-flat bg-gradient-danger" type="button" id="cancel_booking">Cancel Bookings</button>
+        <button class="btn btn-danger btn-flat bg-gradient-danger" style="border-radius: 50px;"type="button" id="cancel_booking">Cancel Bookings</button>
         <?php endif; ?>
-        <button class="btn btn-dark btn-flat bg-gradient-dark" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        <button class="btn btn-dark btn-flat bg-gradient-dark" style="border-radius: 50px;" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
     </div>
 </div>
 <script>

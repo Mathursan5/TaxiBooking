@@ -31,6 +31,6 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
     </dl>
     <div class="clear-fix mb-3"></div>
     <div class="text-right">
-        <button class="btn btn-dark bg-gradient-dark btn-flat" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        <button class="btn btn-dark bg-gradient-dark btn-flat" style="border-radius: 50px;" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
     </div>
 </div>

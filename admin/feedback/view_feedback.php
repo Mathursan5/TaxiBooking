@@ -66,6 +66,6 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     <div class="clear-fix my-3"></div>
 
     <div class="text-right">
-        <button class="btn btn-danger btn-flat bg-gradient-red" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        <button class="btn btn-danger btn-flat bg-gradient-red" style="border-radius: 50px;" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
     </div>
 </div>

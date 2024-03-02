@@ -50,7 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: black;
+            color: white;
         }
 
         
@@ -67,11 +68,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         button {
-            background-color: #4caf50;
+            background-color: orange;
             color: #fff;
             padding: 10px 15px;
             border: none;
-            border-radius: 3px;
+            border-radius: 50px;
             cursor: pointer;
         }
 
@@ -106,10 +107,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <div class="content py-5 mt-5 container">
-    <h2>Feedback Form</h2>
+    <h2>Last Trip Feedback</h2>
     <form action="feedback.php" method="post" onsubmit="return validateForm()">
 
-        <label for="feedback_text">Feedback:</label>
+        <label for="feedback_text">Comments:</label>
         <textarea name="feedback_text" rows="4" required></textarea>
 
         <label for="rating">Rating:</label>

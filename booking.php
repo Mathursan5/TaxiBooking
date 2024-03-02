@@ -15,7 +15,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
         <input type="hidden" name="cab_id" value="<?= isset($_GET['cid']) ? $_GET['cid'] : (isset($cab_id) ? $cab_id : "") ?>">
         <div class="form-group">
     <label for="pickup_date" class="control-label">Pickup Date</label>
-    <input type="date" name="pickup_date" id="pickup_date" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d'); ?>" readonly required>
+    <!-- <input type="date" name="" id="pickup_date" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d'); ?>" readonly required> -->
 </div>
         <div class="form-group">
             <label for="pickup_zone" class="control-label">Pickup Location</label>

@@ -46,7 +46,7 @@
                     <input type="search" id="search" class="form-control" placeholder="Search Here..." aria-label="Search Here" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <span class="input-group-text bg-success" id="basic-addon2"><i class="fa fa-search"></i></span>
-                    </div>
+                </div>
                 </div>
                 <hr>
                 </div>

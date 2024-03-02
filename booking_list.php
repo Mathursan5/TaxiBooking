@@ -44,7 +44,7 @@ if ($booking_result->num_rows > 0) {
                     </colgroup>
                     <thead>
                         <tr class="bg-gradient-light text-dark">
-                            <th class="text-center">Date Booked</th>
+                            <th class="text-center">Date</th>
                             <th class="text-center">Driver</th>
                             <th class="text-center">Taxi</th>
                             <th class="text-center">Pickup</th>
@@ -56,7 +56,7 @@ if ($booking_result->num_rows > 0) {
                     <tbody>
                         <?php 
                         $i = 1;
-                            $qry = $conn->query("SELECT *,c.cab_driver as cab_driver,c.cab_model as cab_model FROM `booking_list` b inner join cab_list c on b.cab_id=c.id where b.client_id = '{$_settings->userdata('id')}' order by unix_timestamp(b.date_created) desc");
+                            $qry = $conn->query("SELECT b.*,c.cab_driver as cab_driver,c.cab_model as cab_model FROM `booking_list` b inner join cab_list c on b.cab_id=c.id where b.client_id = '{$_settings->userdata('id')}' order by unix_timestamp(b.date_created) desc");
                             while($row = $qry->fetch_assoc()):
                         ?>
                         <tr style="color:white;">
