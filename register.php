@@ -34,18 +34,18 @@
         cursor: pointer;
       }
   </style>
-<div class="d-flex align-items-center justify-content-center ">
+<div class="d-flex align-items-center justify-content-center" style="background-color:black; color:white;">
   <!-- /.login-logo -->
   <!-- <div class="d-flex  justify-content-center align-items-center col-lg-5">
       <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="System Logo" class="img-thumbnail rounded-circle" id="logo-img"></center>
       <div class="clear-fix my-2"></div>
   </div> -->
-  <div class="d-flex  justify-content-center align-items-center col-lg-7 bg-gradient-light text-dark">
-    <div class="card card-outline card-purple w-75">
+  <div class="d-flex  justify-content-center align-items-center col-lg-7   text-dark" >
+    <div class="card card-outline w-100">
       <div class="card-header text-center">
-        <a href="./" class="text-decoration-none text-dark"><b>Create an Account - Client</b></a>
+        <a href="./" class="text-decoration-none text-dark"><b>Passenger Create an Account</b></a>
       </div>
-      <div class="card-body">
+      <div class="card-body" style="background-color:black; color:white;">
         <form id="register-frm" action="" method="post">
           <input type="hidden" name="id">
           <div class="row">
@@ -53,10 +53,10 @@
                 <input type="text" name="firstname" id="firstname" placeholder="Enter First Name" class="form-control form-control-sm form-control-border" required>
                 <small class="ml-3">First Name</small>
             </div>
-            <div class="form-group col-md-6">
+            <!-- <div class="form-group col-md-6">
                 <input type="text" name="middlename" id="middlename" placeholder="Enter Middle Name (optional)" class="form-control form-control-sm form-control-border">
                 <small class="ml-3">Middle Name</small>
-            </div>
+            </div> -->
             <div class="form-group col-md-6">
                 <input type="text" name="lastname" id="lastname" placeholder="Enter Last Name" class="form-control form-control-sm form-control-border" required>
                 <small class="ml-3">Last Name</small>
@@ -108,7 +108,7 @@
                 <small class="ml-3">Confirm Password</small>
             </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div class="form-group col-md-6">
               <label for="" class="control-label">Avatar</label>
               <div class="custom-file">
@@ -121,14 +121,14 @@
             <div class="form-group col-md-6 d-flex justify-content-center">
               <img src="<?php echo validate_image(isset($image_path) ? $image_path : "") ?>" alt="" id="cimg" class="img-fluid img-thumbnail">
             </div>
-          </div>
+          </div> -->
           <div class="row align-items-center">
             <div class="col-8">
               <a href="<?php echo base_url ?>" style="text-decoration:none;">Back</a>
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-sm btn-flat btn-block" >Register</button>
+              <button type="submit" class="btn btn-warning btn-sm btn-flat btn-block" style="border-radius: 50px;" >Register</button>
             </div>
             <!-- /.col -->
           </div>
@@ -153,9 +153,8 @@
 </div>
 
 <script src="<?= base_url ?>plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
 <script src="<?= base_url ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
+
 <!-- <script src="<?= base_url ?>dist/js/adminlte.min.js"></script> -->
 
 <script>

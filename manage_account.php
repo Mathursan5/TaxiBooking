@@ -130,7 +130,7 @@ if($_settings->userdata('id') > 0 && $_settings->userdata('login_type') == 2){
                             </div>
                             <!-- /.col -->
                             <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-sm btn-flat btn-block">Update Details</button>
+                            <button type="submit" class="btn btn-warning btn-sm btn-flat btn-block" style="border-radius: 50px;">Update Details</button>
                             </div>
                             <!-- /.col -->
                         </div>

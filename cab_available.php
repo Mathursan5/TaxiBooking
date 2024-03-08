@@ -147,11 +147,11 @@
 
     })
     $(document).scroll(function() { 
-        $('#topNavBar').removeClass('bg-purple navbar-light navbar-dark bg-gradient-purple text-light')
+        $('#topNavBar').removeClass('bg navbar-light navbar-dark text-light')
         if($(window).scrollTop() === 0) {
-           $('#topNavBar').addClass('navbar-dark bg-purple text-light')
+           $('#topNavBar').addClass('navbar-dark  text-light')
         }else{
-           $('#topNavBar').addClass('navbar-dark bg-gradient-purple ')
+           $('#topNavBar').addClass('navbar-dark  ')
         }
     });
     $(function(){

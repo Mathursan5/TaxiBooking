@@ -6,11 +6,11 @@
     object-position: center center;
 }
 </style>
-<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="topNavBar" style="background-color:black;">
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="topNavBar" style="background-color:black; color:white;">
             <div class="container px-4 px-lg-5 ">
                 <button class="navbar-toggler btn btn-sm" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <a class="navbar-brand" href="./">
-                <img src="<?php echo validate_image($_settings->info('logo')) ?>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                <img src="<?php echo validate_image($_settings->info('logo')) ?>" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">
                 <?php echo $_settings->info('short_name') ?>
                 </a>
 
@@ -47,10 +47,10 @@
                       </div>
                     </div>
                   <?php else: ?>
-                    <a href="./login.php" class="text-reset text-decoration-none mx-2"><b>Login</b></a> 
-                    <a href="./register.php" class="text-reset text-decoration-none mx-2"><b>Register</b></a>
-                    <a href="./driver/login.php" class="text-reset text-decoration-none mx-2"><b>Driver Panel</b></a>
-                    <!-- <a href="./admin/login.php" class="text-reset text-decoration-none mx-2"><b>Admin</b></a> -->
+                    <a href="./login.php" class="text-reset text-decoration-none mx-2"><b>Passenger Login</b></a> 
+                    <!-- <a href="./register.php" class="text-reset text-decoration-none mx-2"><b>Register</b></a> -->
+                    <a href="./driver/login.php" class="text-reset text-decoration-none mx-2"><b>Driver Login</b></a>
+                    <a href="./admin/login.php" class="text-reset text-decoration-none mx-2"><b>Admin Login</b></a>
                   <?php endif; ?>
                 </div>
             </div>

@@ -262,9 +262,9 @@ Class Master extends DBConnection {
 		if($save){
 			$resp['status'] = 'success';
 			if(empty($id))
-				$this->settings->set_flashdata('success'," Driver has been booked successfully.");
+				$this->settings->set_flashdata('success'," Trip has been booked successfully.");
 			else
-				$this->settings->set_flashdata('success'," Driver successfully updated.");
+				$this->settings->set_flashdata('success'," Trip successfully updated.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['err'] = $this->conn->error."[{$sql}]";
@@ -296,6 +296,50 @@ Class Master extends DBConnection {
 		}
 		return json_encode($resp);
 	}
+	function save_OP_booking(){
+		if(empty($_POST['id'])){
+			$prefix = date('Ym-');
+			$code = sprintf("%'.05d",1);
+			while(true){
+				$check = $this->conn->query("SELECT * FROM `cab_list` where reg_code = '{$prefix}{$code}'")->num_rows;
+				if($check > 0){
+					$code = sprintf("%'.05d",ceil($code) + 1);
+				}else{
+					break;
+				}
+			}
+			$_POST['client_id'] = $this->settings->userdata('id');
+			$_POST['ref_code'] = $prefix.$code;
+			$_POST['cab_id'] = $this->userdata('cab_id');
+			$_POST['client_id'] = $this->userdata('çlient_id');
+		}
+		extract($_POST);
+		$data = "";
+		foreach($_POST as $k =>$v){
+			if(!in_array($k,array('id'))){
+				if(!empty($data)) $data .=",";
+				$data .= " `{$k}`='{$v}' ";
+			}
+		}
+		if(empty($id)){
+			$sql = "INSERT INTO `booking_list` set {$data} ";
+			$save = $this->conn->query($sql);
+		}else{
+			$sql = "UPDATE `booking_list` set {$data} where id = '{$id}' ";
+			$save = $this->conn->query($sql);
+		}
+		if($save){
+			$resp['status'] = 'success';
+			if(empty($id))
+				$this->settings->set_flashdata('success'," Trip has been booked successfully.");
+			else
+				$this->settings->set_flashdata('success'," Trip successfully updated.");
+		}else{
+			$resp['status'] = 'failed';
+			$resp['err'] = $this->conn->error."[{$sql}]";
+		}
+		return json_encode($resp);
+	}
 }
 
 $Master = new Master();
@@ -322,6 +366,10 @@ switch ($action) {
 	break;
 	case 'update_booking_status':
 		echo $Master->update_booking_status();
+	break;
+	//save_OP_booking
+	case 'save_OP_booking':
+		echo $Master->save_OP_booking();
 	break;
 	default:
 		// echo $sysset->index();

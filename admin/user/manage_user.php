@@ -66,7 +66,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 					<a class="btn  btn-danger" href="./?page=user/list" style="border-radius: 50px;">Cancel</a>
 				</div>
 			</div>
-		</div>
+	</div>
 </div>
 <style>
 	img#cimg{
