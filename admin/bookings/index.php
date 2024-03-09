@@ -1,6 +1,9 @@
 <div class="card card-outline card-black shadow rounded-0" style="background-color:black; color:white;">
     <div class="card-header">
         <h3 class="card-title">Booking List</h3>
+        <div class="card-tools">
+			<a href="?page=operator/op_booking" class="btn btn-flat btn-warning btn-sm" style="border-radius: 50px;"><span class="fas fa-plus"></span>  Add Mannual Booking</a>
+		</div>
     </div>
     <div class="card-body">
         <div class="container-fluid">
@@ -81,4 +84,5 @@
             
         })
     })
+    
 </script>

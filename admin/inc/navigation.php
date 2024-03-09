@@ -30,7 +30,7 @@
                           Dashboard
                         </p>
                       </a>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown" >
                       <a href="<?php echo base_url ?>admin/?page=categories" class="nav-link nav-categories">
                         <i class="nav-icon fas fa-taxi"></i>

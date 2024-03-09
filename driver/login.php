@@ -21,72 +21,62 @@
           object-position:center center;
       }
   </style>
-<div class="login-box">
+<!-- <div class="login-box">
 <?php $page = isset($_GET['page']) ? $_GET['page'] : 'home';  ?>
      <?php if($_settings->chk_flashdata('success')): ?>
       <script>
         alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
       </script>
     <?php endif;?>
-  <!-- /.login-logo -->
-  <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="System Logo" id="logo-img"></center>
-  <div class="clear-fix my-2"></div>
-  <div class="card card-outline card-purple">
-    <div class="card-header text-center">
-      <a href="./" class="h4 text-decoration-none"><b>Driver Login</b></a>
-    </div>
-    <div class="card-body">
-      
-      <form id="dlogin-frm" action="" method="post">
-        <div class="input-group mb-3">
-        <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-          <input type="text" class="form-control" name="cab_driver" placeholder="Name">
-          
-        </div>
-        <div class="input-group mb-3">
-        <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-          <input type="password" class="form-control" name="password" placeholder="Password">
-          
-        </div>
-        <div class="row align-items-center">
-          <div class="col-8">
-            <a href="<?php echo base_url ?>" style="text-decoration:none;">Back</a>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-success btn-sm btn-flat btn-block">Log In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-      <!-- /.social-auth-links -->
+     -->
 
-      <!-- <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p> -->
-      
+<body class="bg-gradient-primary">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                              <img src="../assets/images/cardriver.png">
+                            </div>
+                            <div class="col-lg-6" style="background-color:black; color:white;">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Driver Login</h1>
+                                    </div>
+                                    <form id="dlogin-frm" action="" method="post" class="">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="cab_driver" placeholder="Driver Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="password" placeholder="Password">
+                                        </div>
+                                        <button type="submit" class="btn btn-warning btn-user btn-block" style="border-radius: 50px;">
+                                            Log In
+                                        </button>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="<?php echo base_url ?>">Back</a>
+                                    </div> 
+                                </div>
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">CITY TAXI BOOKING SYSTEM</h1> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.card-body -->
-  </div>
-  <!-- /.card -->
-</div>
-<!-- /.login-box -->
 
-<!-- jQuery -->
+
+
 <script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-
 <script>
   $(document).ready(function(){
     end_loader();
