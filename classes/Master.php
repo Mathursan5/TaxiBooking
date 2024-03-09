@@ -311,7 +311,6 @@ Class Master extends DBConnection {
 			$_POST['client_id'] = $this->settings->userdata('id');
 			$_POST['ref_code'] = $prefix.$code;
 			$_POST['cab_id'] = $this->userdata('cab_id');
-			$_POST['client_id'] = $this->userdata('çlient_id');
 		}
 		extract($_POST);
 		$data = "";

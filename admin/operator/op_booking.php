@@ -22,16 +22,43 @@
         </div>
         <div class="form-group">
             <label for="pickup_date" class="control-label">Pickup Date</label>
-            <input type="date" name="" id="pickup_date" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d'); ?>" readonly required> 
+            <input type="date" name="" id="pickup_date" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d'); ?>" required> 
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="pickup_zone" class="control-label">Pickup Location</label>
             <input type="text" name="pickup_zone" id="pickup_zone" rows="2" class="form-control form-control-sm rounded-0" required> 
-        </div>
+        </div> -->
+        
         <div class="form-group">
-            <label for="drop_zone" class="control-label">Drop-off Location</label>
-            <input type="text" name="drop_zone" id="drop_zone" rows="2" class="form-control form-control-sm rounded-0" required> 
+        <label for="pickup_zone" class="control-label">Pickup Location</label>
+            <select name="pickup_zone" id="pickup_zone" class="custom-select select2">
+                <option value="" <?= !isset($city_name) ? "selected" : "" ?> disabled></option>
+                <?php 
+                $cities = $conn->query("SELECT * FROM city_list ORDER BY `city_name` ASC");
+                while($row = $cities->fetch_assoc()):
+                ?>
+                <option value="<?= $row['city_name'] ?>" <?= isset($city_name) && $city_name == $row['city_name'] ? "selected" : "" ?>>
+                    <?= $row['city_name'] ?>
+                </option>
+                <?php endwhile; ?>
+            </select>
         </div>
+
+        <div class="form-group">
+        <label for="drop_zone" class="control-label">Drop-off Location</label>
+            <select name="drop_zone" id="drop_zone" class="custom-select select2">
+                <option value="" <?= !isset($city_name) ? "selected" : "" ?> disabled></option>
+                <?php 
+                $cities = $conn->query("SELECT * FROM city_list ORDER BY `city_name` ASC");
+                while($row = $cities->fetch_assoc()):
+                ?>
+                <option value="<?= $row['city_name'] ?>" <?= isset($city_name) && $city_name == $row['city_name'] ? "selected" : "" ?>>
+                    <?= $row['city_name'] ?>
+                </option>
+                <?php endwhile; ?>
+            </select>
+        </div>
+
     </form>
     <div class="card-footer">
 			<div class="col-md-12">

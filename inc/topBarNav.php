@@ -46,12 +46,22 @@
                         </div>
                       </div>
                     </div>
-                  <?php else: ?>
-                    <a href="./login.php" class="text-reset text-decoration-none mx-2"><b>Passenger Login</b></a> 
-                    <!-- <a href="./register.php" class="text-reset text-decoration-none mx-2"><b>Register</b></a> -->
-                    <a href="./driver/login.php" class="text-reset text-decoration-none mx-2"><b>Driver Login</b></a>
-                    <a href="./admin/login.php" class="text-reset text-decoration-none mx-2"><b>Admin Login</b></a>
-                  <?php endif; ?>
+                    <?php else: ?>
+                    
+                  
+
+                  <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login Options
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="loginDropdown">
+                        <a class="dropdown-item" href="./login.php">Passenger Login</a> 
+                        <a class="dropdown-item" href="./driver/login.php">Driver Login</a>
+                        <a class="dropdown-item" href="./admin/login.php">Admin Login</a>             
+                    </div>
+                  </div>
+
+                  <?php endif; ?>  
                 </div>
             </div>
         </nav>
